@@ -6,6 +6,7 @@
 - إنشاء `TaskViewSet` لدعم عمليات CRUD كاملة المشاريع.
 - إنشاء `TaskViewSet` لدعم عمليات CRUD كاملة للمهام.
 - تطبيق صلاحيات مخصصة باستخدام Permission Classes مثل:
+  ## Admin Permissions
   - `IsAdminUser`
   ## Project Permissions
   -  `IsProjectManager`
