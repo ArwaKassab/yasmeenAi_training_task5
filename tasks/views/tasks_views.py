@@ -53,7 +53,7 @@ class TaskViewSet(viewsets.ModelViewSet):
             Q(project__members=user)
         ).distinct()
 
-    # 📌 عرض مهام مشروع معين
+    # عرض مهام مشروع معين
     @action(detail=False, methods=['get'], url_path='project-tasks/(?P<project_id>[^/.]+)')
     def project_tasks(self, request, project_id=None):
         user = request.user
@@ -71,7 +71,7 @@ class TaskViewSet(viewsets.ModelViewSet):
         serializer = TaskSerializer(tasks, many=True)
         return Response(serializer.data)
 
-    # 📌 إضافة مهمة لمشروع
+    # إضافة مهمة لمشروع
     @action(detail=False, methods=['post'], url_path='add-task-to-project')
     def add_task_to_project(self, request):
         user = request.user
@@ -91,7 +91,7 @@ class TaskViewSet(viewsets.ModelViewSet):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    # 📌 تكليف عضو بمهمة
+    # تكليف عضو بمهمة
     @action(detail=True, methods=['post'], url_path='assign-member')
     def assign_member(self, request, pk=None):
         task = self.get_object()

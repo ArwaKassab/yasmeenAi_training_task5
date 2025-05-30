@@ -21,7 +21,7 @@ class Task(models.Model):
     )
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='todo')
     is_completed = models.BooleanField(default=False)
-    is_pinned = models.BooleanField(default=False)  # ✅ تمت إضافة الحقل هنا
+    is_pinned = models.BooleanField(default=False)  
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
