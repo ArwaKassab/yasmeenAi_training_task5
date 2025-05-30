@@ -7,14 +7,14 @@
 - إنشاء `TaskViewSet` لدعم عمليات CRUD كاملة للمهام.
 - تطبيق صلاحيات مخصصة باستخدام Permission Classes مثل:
   - `IsAdminUser`
-  - `Project Permissions`
-  - -  `IsProjectManager`
-  - -`IsAdminOrProjectManager`
-  - -`IsAdminOrProjectManagerOrMember`
-  - `Task Permissions`
-  - -`IsTaskAssignee`
-  - -`IsProjectManagerOfTask`
-  - -`IsAdminOrProjectManagerOrTaskAssignee`
+  ##Project Permissions
+  -  `IsProjectManager`
+  - `IsAdminOrProjectManager`
+  - `IsAdminOrProjectManagerOrMember`
+  ##Task Permissions
+  - `IsTaskAssignee`
+  - `IsProjectManagerOfTask`
+  - `IsAdminOrProjectManagerOrTaskAssignee`
 
   -  لتحديد صلاحيات الوصول حسب دور المستخدم.
 - إضافة عدة projects endpoints خاصة منها:
