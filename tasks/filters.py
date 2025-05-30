@@ -1,5 +1,5 @@
 import django_filters
-from projects.models import Task
+from tasks.models import Task
 from django_filters import rest_framework as filters
 
 class TaskFilter(filters.FilterSet):

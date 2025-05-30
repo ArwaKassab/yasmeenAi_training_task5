@@ -20,7 +20,7 @@ class Task(models.Model):
         blank=True
     )
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='todo')
-    due_date = models.DateField()
+    is_completed = models.BooleanField(default=False)
     is_pinned = models.BooleanField(default=False)  # ✅ تمت إضافة الحقل هنا
     created_at = models.DateTimeField(auto_now_add=True)
 

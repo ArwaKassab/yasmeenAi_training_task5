@@ -8,7 +8,7 @@ from tasks.serializers.tasks_serializers import TaskSerializer
 from accounts.models import User
 from projects.models import Project
 from permissions import (
-    IsAdminUser, IsProjectManager, IsProjectMember,
+    IsAdminUser, IsProjectManager,
     IsAdminOrProjectManagerOrMember, IsTaskAssignee,
     IsProjectManagerOfTask, IsAdminOrProjectManagerOrTaskAssignee
 )
@@ -24,6 +24,10 @@ class TaskViewSet(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend]
     filterset_class = TaskFilter
     def get_permissions(self):
+        user = self.request.user
+
+        if user.is_authenticated and user.role == 'admin':
+            return [IsAuthenticated()]
         permissions = [IsAuthenticated()]
 
         if self.action == 'create':
